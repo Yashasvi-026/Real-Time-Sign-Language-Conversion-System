@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>SignSpeak | AI Sign Language Translator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+
+    <div class="blob blob1"></div>
+
+    <div class="blob blob2"></div>
+
+    <div class="blob blob3"></div>
+
+    
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-hands"></i>
+
+                <span>SignSpeak</span>
+
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#features">Features</a></li>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+            <button class="nav-btn" id="getStartedBtn">
+
+                Get Started
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <section class="hero">
+
+    
+
+        <div class="hero-left">
+
+            <h1>
+
+                Translate
+
+                <span>Sign Language</span>
+
+                Into
+
+                <br>
+
+                Text & Speech
+
+            </h1>
+
+            <p>
+
+                Because every conversation matters. SignSpeak uses AI to translate sign language into text and natural speech, helping people connect with ease, confidence, and understanding.
+
+            </p>
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <h2>99%</h2>
+
+                    <span>Accuracy</span>
+
+                </div>
+
+                <div class="stat">
+
+                    <h2>24/7</h2>
+
+                    <span>Available</span>
+
+                </div>
+
+                <div class="stat">
+
+                    <h2>AI</h2>
+
+                    <span>Powered</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="hero-right">
+
+            <div class="glass-card">
+
+
+
+                <div class="tabs">
+
+                    <button class="tab active"
+                        id="loginTab">
+
+                        Login
+
+                    </button>
+
+                    <button class="tab"
+                        id="registerTab">
+
+                        Register
+
+                    </button>
+
+                </div>
+
+
+
+                <form id="loginForm">
+
+                    <h2>
+
+                        Welcome Back 
+
+                    </h2>
+
+                    <p>
+
+                        Login to continue using SignSpeak.
+
+                    </p>
+
+                    <div class="input-group">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Email Address"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Password"
+                            required>
+
+                        <span class="toggle-password">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </span>
+
+                    </div>
+
+                    <div class="remember">
+
+
+                        <a href="#" id="forgotPasswordLink">
+
+                            Forgot Password?
+
+                        </a>
+
+                    </div>
+
+                    <button
+                        class="submit-btn">
+
+                        Login
+
+                    </button>
+                  
+                </form>
+
+
+                <form id="registerForm" class="hidden">
+
+    <h2>Create Account</h2>
+
+    <p>
+        Join SignSpeak and start translating sign language.
+    </p>
+
+
+
+    <div class="input-group">
+
+        <i class="fa-solid fa-user"></i>
+
+        <input
+            type="text"
+            id="registerName"
+            placeholder="Full Name"
+            required>
+
+    </div>
+
+
+
+    <div class="input-group">
+
+        <i class="fa-solid fa-envelope"></i>
+
+        <input
+            type="email"
+            id="registerEmail"
+            placeholder="Email Address"
+            required>
+
+    </div>
+
+ 
+
+    <div class="input-group">
+
+        <i class="fa-solid fa-lock"></i>
+
+        <input
+            type="password"
+            id="registerPassword"
+            placeholder="Create Password"
+            required>
+
+        <span class="toggle-password">
+
+            <i class="fa-solid fa-eye"></i>
+
+        </span>
+
+    </div>
+
+ 
+
+    <div class="input-group">
+
+        <i class="fa-solid fa-lock"></i>
+
+        <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            required>
+
+        <span class="toggle-password">
+
+            <i class="fa-solid fa-eye"></i>
+
+        </span>
+
+    </div>
+
+    
+
+    <button
+        type="submit"
+        class="submit-btn">
+
+        Create Account
+
+    </button>
+
+</form>
+
+<form id="registerOtpForm" class="hidden">
+
+    <h2>Verify Email</h2>
+
+    <p id="otpEmailText"></p>
+
+    <div class="input-group">
+
+        <i class="fa-solid fa-key"></i>
+
+        <input
+            type="text"
+            id="registerOtp"
+            placeholder="Enter OTP">
+
+    </div>
+
+    <button>
+
+        Verify OTP
+
+    </button>
+
+    <a href="#" id="resendRegisterOtp">
+
+        Resend OTP
+
+    </a>
+
+</form>
+
+                <form id="forgotForm" class="hidden">
+
+    <h2>Verify OTP</h2>
+
+    <p id="otpMessage">
+        OTP has been sent to your registered email.
+    </p>
+
+    <div class="input-group">
+
+        <i class="fa-solid fa-key"></i>
+
+        <input
+            type="text"
+            placeholder="Enter OTP"
+            required>
+
+    </div>
+
+    <button 
+    type="submit"
+    class="submit-btn">
+
+        Verify OTP
+
+    </button>
+
+</form>
+
+<form id="resetForm" class="hidden">
+
+    <h2>Create New Password</h2>
+
+    <p>
+        Your OTP has been verified.
+    </p>
+
+    <div class="input-group">
+
+        <i class="fa-solid fa-lock"></i>
+
+        <input
+            type="password"
+            id="newPassword"
+            placeholder="New Password"
+            required>
+
+    </div>
+
+    <div class="input-group">
+
+        <i class="fa-solid fa-lock"></i>
+
+        <input
+            type="password"
+            id="confirmPasswordReset"
+            placeholder="Confirm Password"
+            required>
+
+    </div>
+
+    <button class="submit-btn">
+
+        Save Password
+
+    </button>
+
+</form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <section class="features-section" id="features">
+
+        <h2>
+
+            Why Choose SignSpeak?
+
+        </h2>
+
+        <p>
+
+            Powerful AI features that make communication easier than ever.
+
+        </p>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-camera"></i>
+
+                <h3>
+
+                    Live Detection
+
+                </h3>
+
+                <p>
+
+                    Detect sign language instantly using your webcam.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-language"></i>
+
+                <h3>
+
+                    Instant Translation
+
+                </h3>
+
+                <p>
+
+                    Convert gestures directly into readable sentences.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-volume-high"></i>
+
+                <h3>
+
+                    Speech Output
+
+                </h3>
+
+                <p>
+
+                    Hear translated text instantly using Text-to-Speech.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <section class="about-section" id="about">
+
+        <div class="about-left">
+
+            <img src="../images/signspeak.png"
+                alt="AI Illustration">
+
+        </div>
+
+        <div class="about-right">
+
+            <span>
+
+                ABOUT SIGNSPEAK
+
+            </span>
+
+            <h2>
+
+                Breaking Communication Barriers with AI
+
+            </h2>
+
+            <p>
+
+                SignSpeak is an AI-powered platform that recognizes
+                sign language gestures and converts them into text
+                and speech in real time.
+
+                Our goal is to bridge communication gaps and make
+                conversations easier for everyone.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    
+    <section class="contact-section" id="contact">
+
+        <h2>
+
+            Get In Touch
+
+        </h2>
+
+        <p>
+
+            We'd love to hear your feedback.
+
+        </p>
+
+        <div class="contact-icons">
+
+            <a href="#">
+
+                <i class="fa-brands fa-linkedin"></i>
+
+            </a>
+
+            <a href="#">
+
+                <i class="fa-brands fa-github"></i>
+
+            </a>
+
+            <a href="#">
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+
+    <button id="topBtn">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

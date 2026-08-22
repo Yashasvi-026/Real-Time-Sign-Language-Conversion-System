@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SignSpeak Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+<body>
+
+
+
+    <header class="topbar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-hands"></i>
+
+            <h2>SignSpeak</h2>
+
+        </div>
+
+        <div class="profile">
+
+            <i class="fa-solid fa-circle-user"></i>
+
+            <span id="username">Welcome, <strong>Yashasvi</strong></span>
+
+        </div>
+
+    </header>
+
+
+
+
+    <div class="dashboard">
+
+
+
+        <aside class="sidebar">
+
+
+
+            <button id="trainBtn" class="train-btn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Train New Word
+
+            </button>
+
+
+
+            <div class="train-box hidden" id="trainBox">
+
+                <input
+                    type="text"
+                    id="newWord"
+                    placeholder="Enter Word Name">
+
+                <div class="train-buttons">
+
+                    <button id="startTraining">
+
+                        Start Training
+
+                    </button>
+
+                    <button id="cancelTraining">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="accordion">
+
+                <div class="accordion-header">
+
+                    <span>
+
+                        <i class="fa-solid fa-list"></i>
+
+                        Word List
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+                <div class="accordion-content" >
+                <div id="wordList">
+
+                </div>
+                    
+
+                </div>
+
+            </div>
+
+
+
+            <div class="accordion">
+
+                <div class="accordion-header">
+
+                    <span>
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        Instructions
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+                <div
+                    class="accordion-content">
+                    <div id="instructionPanel">
+                    <ul>
+
+                        <li>Keep your hand inside the camera frame.</li>
+
+                        <li>Use proper lighting.</li>
+
+                        <li>Perform one sign at a time.</li>
+
+                        <li>Press Enter after every word.</li>
+
+                        <li>Use Speak to hear the sentence.</li>
+
+                    </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="bottom-links">
+
+                <button class="logout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </button>
+
+                <button class="delete">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                    Delete Account
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+
+        <main class="center-panel">
+
+
+            <div class="camera-card">
+
+                <div id="cameraContainer">
+                     <div id="cameraArea">
+                        <div class="camera-placeholder">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    <p>
+
+                        Webcam is Off
+
+                    </p>
+
+                    <button id="openCameraBtn">
+
+                        Open Webcam
+
+                    </button>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="result-card">
+
+    <h3 id="panelTitle">
+
+        Generated Sentence
+
+    </h3>
+
+
+
+    <div id="generatedSentence">
+
+        ----
+
+    </div>
+
+
+
+    <div
+        id="trainingPanel"
+        class="hidden">
+
+    </div>
+
+</div>
+
+
+        </main>
+
+
+
+        <aside class="action-panel">
+
+
+            <button id="clearWordBtn">
+
+                <i class="fa-solid fa-eraser"></i>
+
+                Clear Word
+
+            </button>
+
+
+            <button id="resetSentenceBtn">
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+                Reset Sentence
+
+            </button>
+
+
+            <button id="enterBtn">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Enter
+
+            </button>
+
+
+            <button id="speakBtn">
+
+                <i class="fa-solid fa-volume-high"></i>
+
+                Speak
+
+            </button>
+
+
+            <button id="saveSampleBtn">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Sample
+
+            </button>
+            <p id="trainingStatus"></p>
+
+        </aside>
+
+
+    </div>
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
